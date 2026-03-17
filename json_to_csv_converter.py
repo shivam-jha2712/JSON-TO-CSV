@@ -96,9 +96,11 @@ def convert_json_to_csv(source_json_path: str, result_folder_path: str, output_f
 
     rows = build_rows_from_top_level(data)
 
-    if output_filename is None:
-        base = os.path.splitext(os.path.basename(source_json_path))[0]
-        output_filename = f"{base}.csv"
+    # if output_filename is None:
+    #     base = os.path.splitext(os.path.basename(source_json_path))[0]
+    #     output_filename = f"{base}.csv"
+
+    output_filename = "result.csv"
 
     output_csv_path = os.path.join(result_folder_path, output_filename)
     write_csv(rows, output_csv_path)
